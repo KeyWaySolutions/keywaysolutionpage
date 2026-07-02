@@ -13,7 +13,7 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,oklch(0.32_0.02_265/0.25)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.32_0.02_265/0.25)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,oklch(0.33_0.03_235/0.25)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.33_0.03_235/0.25)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
       />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
@@ -24,9 +24,11 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Creamos Software a Medida y{" "}
-            <span className="text-primary">Automatizaciones con IA</span> que
-            Hacen Crecer tu Negocio
+            En KeyWay Solutions creamos Software a Medida y{" "}
+            <span className="bg-gradient-to-r from-[#3a8fd4] via-[#19a3ac] to-[#31be79] bg-clip-text text-transparent">
+              Automatizaciones con IA
+            </span>{" "}
+            que Hacen Crecer tu Negocio
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground lg:mx-0">
@@ -37,7 +39,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
             <a
               href="#contacto"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_28px_oklch(0.7_0.18_235/0.45)] transition-all hover:brightness-110 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_28px_oklch(0.72_0.12_195/0.45)] transition-all hover:brightness-110 sm:w-auto"
             >
               Agendar Consulta
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

@@ -31,7 +31,7 @@ export function About() {
             Un equipo ágil con tecnología de punta
           </h2>
           <p className="mt-5 leading-relaxed text-muted-foreground">
-            En Uruguay Tech somos un equipo de desarrollo ágil enfocado en
+            En KeyWay Solutions somos un equipo de desarrollo ágil enfocado en
             acercar tecnología de vanguardia a empresas locales y de toda la
             región. Combinamos experiencia en ingeniería de software con las
             últimas herramientas de inteligencia artificial.
@@ -48,7 +48,7 @@ export function About() {
           <ol className="relative space-y-8 border-l border-border pl-8">
             {steps.map((step, i) => (
               <li key={step.title} className="relative">
-                <span className="absolute -left-[2.85rem] flex size-9 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-[0_0_16px_oklch(0.7_0.18_235/0.3)]">
+                <span className="absolute -left-[2.85rem] flex size-9 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-[0_0_16px_oklch(0.72_0.12_195/0.3)]">
                   <step.icon className="size-4" aria-hidden="true" />
                 </span>
                 <div className="flex items-center gap-2">

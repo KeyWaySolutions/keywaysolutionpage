@@ -10,9 +10,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Uruguay Tech | Software a Medida y Automatizaciones con IA',
+  title: 'KeyWay Solutions | Software a Medida y Automatizaciones con IA',
   description:
-    'Creamos software a medida y automatizaciones con IA que hacen crecer tu negocio. Aplicaciones web escalables, agentes inteligentes y optimización de procesos en Concepción del Uruguay, Entre Ríos.',
+    'KeyWay Solutions crea software a medida y automatizaciones con IA que hacen crecer tu negocio. Aplicaciones web escalables, agentes inteligentes y optimización de procesos en Concepción del Uruguay, Entre Ríos.',
   generator: 'v0.app',
   icons: {
     icon: [

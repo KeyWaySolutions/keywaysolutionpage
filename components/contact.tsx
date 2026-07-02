@@ -48,13 +48,18 @@ export function Contact() {
               </span>
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium">hola@uruguaytech.com</p>
+                <a
+                  href="mailto:keywayscontacto@gmail.com"
+                  className="font-medium transition-colors hover:text-primary"
+                >
+                  keywayscontacto@gmail.com
+                </a>
               </div>
             </li>
           </ul>
 
           <a
-            href="https://wa.me/5493442000000?text=Hola%20Uruguay%20Tech%2C%20quiero%20una%20consulta"
+            href="https://wa.me/5493442000000?text=Hola%20KeyWay%20Solutions%2C%20quiero%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-8 inline-flex items-center gap-3 rounded-2xl bg-[#25D366] px-6 py-4 font-semibold text-[#06251a] shadow-[0_0_30px_#25D36655] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_40px_#25D36677]"
@@ -117,7 +122,7 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.7_0.18_235/0.4)] transition-all hover:brightness-110"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110"
             >
               {sent ? (
                 <>
