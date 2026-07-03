@@ -48,7 +48,7 @@ export function About() {
           <ol className="relative space-y-8 border-l border-border pl-8">
             {steps.map((step, i) => (
               <li key={step.title} className="relative">
-                <span className="absolute -left-[2.85rem] flex size-9 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-[0_0_16px_oklch(0.66_0.17_163/0.3)]">
+                <span className="absolute -left-[2.85rem] flex size-9 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-[0_0_16px_oklch(0.72_0.12_195/0.3)]">
                   <step.icon className="size-4" aria-hidden="true" />
                 </span>
                 <div className="flex items-center gap-2">

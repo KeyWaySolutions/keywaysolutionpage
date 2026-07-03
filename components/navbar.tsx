@@ -16,15 +16,13 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#inicio" className="flex items-center gap-2">
-          <img
-            src="/logo-icon-transparent.png"
-            alt="KWS"
-            className="h-6 w-auto object-contain"
-          />
+        <a href="#inicio" className="flex items-center gap-2.5">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#1466b5] via-[#149aa6] to-[#2bb673] text-base font-extrabold tracking-tight text-white shadow-[0_0_18px_oklch(0.72_0.12_195/0.5)]">
+            KWS
+          </span>
           <span className="hidden text-lg font-semibold tracking-tight sm:inline">
             KeyWay{" "}
-            <span className="bg-gradient-to-r from-[#1d5fb5] via-[#04906e] to-[#02a569] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#1e78c2] via-[#17a3ac] to-[#2bb673] bg-clip-text text-transparent">
               Solutions
             </span>
           </span>
