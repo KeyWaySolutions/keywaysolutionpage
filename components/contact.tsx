@@ -122,7 +122,7 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.66_0.17_163/0.4)] transition-all hover:brightness-110"
             >
               {sent ? (
                 <>
