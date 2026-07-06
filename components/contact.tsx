@@ -1,17 +1,64 @@
 "use client"
 
 import { useState } from "react"
-import { MapPin, Mail, MessageCircle, Send, Check } from "lucide-react"
+import { MapPin, Mail, MessageCircle, Send, Check, Loader2 } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" })
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSent(true)
-    setForm({ nombre: "", email: "", mensaje: "" })
-    setTimeout(() => setSent(false), 4000)
+    if (loading) return
+
+    try {
+      setLoading(true)
+
+      const templateParams = {
+        nombre: form.nombre,
+        email: form.email,
+        mensaje: form.mensaje,
+        from_name: form.nombre,
+        from_email: form.email,
+        message: form.mensaje,
+      }
+
+      const autoReplyParams = {
+        nombre: form.nombre,
+        email: form.email,
+        to_name: form.nombre,
+        to_email: form.email,
+        from_name: "KeyWay Solutions",
+        reply_to: "keywayscontacto@gmail.com"
+      }
+
+      // Disparar ambas plantillas en paralelo
+      await Promise.all([
+        emailjs.send(
+          "service_qygg8mt",
+          "template_09qrqwe", // Notificación Equipo
+          templateParams,
+          "E7FvfI4MEqw9_rACi"
+        ),
+        emailjs.send(
+          "service_qygg8mt",
+          "template_4jo1ayn", // Auto-Reply Cliente
+          autoReplyParams,
+          "E7FvfI4MEqw9_rACi"
+        )
+      ])
+
+      setSent(true)
+      setForm({ nombre: "", email: "", mensaje: "" })
+      setTimeout(() => setSent(false), 5000)
+    } catch (error) {
+      console.error("Error al enviar el email:", error)
+      alert("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos por WhatsApp.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -122,9 +169,15 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110"
+              disabled={loading}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110 disabled:opacity-75 disabled:pointer-events-none"
             >
-              {sent ? (
+              {loading ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" />
+                  Enviando...
+                </>
+              ) : sent ? (
                 <>
                   <Check className="size-4" />
                   ¡Mensaje enviado!
