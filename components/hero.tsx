@@ -1,4 +1,4 @@
-import { ArrowRight, Activity, Bot, Cpu, Sparkles, TrendingUp } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 export function Hero() {
   return (
@@ -25,7 +25,7 @@ export function Hero() {
 
           <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             En KeyWay Solutions creamos Software a Medida y{" "}
-            <span className="bg-gradient-to-r from-[#3a8fd4] via-[#19a3ac] to-[#31be79] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
               Automatizaciones con IA
             </span>{" "}
             que Hacen Crecer tu Negocio
@@ -53,61 +53,141 @@ export function Hero() {
           </div>
         </div>
 
-        {/* dashboard preview card */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+        {/* code editor preview card */}
+        <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          {/* Ambient glow */}
           <div className="absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl" aria-hidden="true" />
-          <div className="relative rounded-2xl border border-border bg-card/80 p-5 shadow-2xl backdrop-blur">
-            <div className="flex items-center justify-between border-b border-border pb-4">
+          
+          <div className="relative rounded-2xl border border-border bg-card/90 shadow-2xl backdrop-blur-xl overflow-hidden font-mono text-[13px] sm:text-sm leading-relaxed">
+            {/* Editor Header / Title bar */}
+            <div className="flex items-center justify-between border-b border-border/80 bg-muted/40 px-4 py-3 select-none">
               <div className="flex items-center gap-2">
-                <span className="flex size-8 items-center justify-center rounded-lg bg-primary/15 text-primary">
-                  <Activity className="size-4" aria-hidden="true" />
-                </span>
+                <span className="size-3 rounded-full bg-[#ff5f56] transition-transform hover:scale-105" />
+                <span className="size-3 rounded-full bg-[#ffbd2e] transition-transform hover:scale-105" />
+                <span className="size-3 rounded-full bg-[#27c93f] transition-transform hover:scale-105" />
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">keyWaySolutions.js</span>
+              <div className="w-14" />
+            </div>
+
+            {/* Editor Content */}
+            <div className="p-5 sm:p-6 overflow-x-auto">
+              {/* Simulated Code */}
+              <div className="space-y-1">
                 <div>
-                  <p className="text-sm font-medium">Panel de Operaciones</p>
-                  <p className="text-xs text-muted-foreground">Tiempo real</p>
+                  <span className="text-[#3b82f6] font-semibold">const</span>{" "}
+                  <span className="text-[#14b8a6]">keyWaySolutions</span> = {"{"}
                 </div>
+                <div className="pl-6 border-l border-border/30">
+                  <span className="text-muted-foreground">enfoque</span>:{" "}
+                  <span className="text-[#10b981]">"Software a medida"</span>,
+                </div>
+                <div className="pl-6 border-l border-border/30">
+                  <span className="text-muted-foreground">tecnologia</span>:{" "}
+                  <span className="text-[#10b981]">"Automatizaciones con IA"</span>,
+                </div>
+                <div className="pl-6 border-l border-border/30">
+                  <span className="text-muted-foreground">mision</span>:{" "}
+                  <span className="text-[#10b981]">"Hacer crecer tu negocio"</span>,
+                </div>
+                <div className="pl-6 border-l border-border/30">
+                  <span className="text-muted-foreground">desempeno</span>:{" "}
+                  <span className="text-[#10b981]">"Máxima eficiencia ⚡"</span>,
+                </div>
+                <div className="pl-6 border-l border-border/30">
+                  <span className="text-muted-foreground">escalable</span>:{" "}
+                  <span className="text-[#3b82f6]">true</span>
+                </div>
+                <div>{"};"}</div>
               </div>
-              <span className="flex items-center gap-1.5 rounded-full bg-chart-4/15 px-2.5 py-1 text-xs font-medium text-chart-4">
-                <span className="size-1.5 rounded-full bg-chart-4" />
-                Activo
-              </span>
-            </div>
 
-            <div className="grid grid-cols-2 gap-3 py-4">
-              <div className="rounded-xl border border-border bg-background/50 p-4">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <TrendingUp className="size-4 text-primary" aria-hidden="true" />
-                  <span className="text-xs">Eficiencia</span>
+              {/* Console logs */}
+              <div className="mt-6 border-t border-border/60 pt-4 space-y-1 text-xs select-none">
+                <div className="text-emerald-500/70">
+                  // ejecutando sistema...
                 </div>
-                <p className="mt-2 text-2xl font-semibold">+47%</p>
-              </div>
-              <div className="rounded-xl border border-border bg-background/50 p-4">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Bot className="size-4 text-chart-2" aria-hidden="true" />
-                  <span className="text-xs">Tareas IA</span>
+                <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <span>✓</span>
+                  <span>base de datos conectada</span>
                 </div>
-                <p className="mt-2 text-2xl font-semibold">1.284</p>
+                <div className="text-[#3b82f6] font-semibold italic">
+                  status: ready 🚀
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* faux chart */}
-            <div className="rounded-xl border border-border bg-background/50 p-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">
-                  Procesos automatizados
-                </span>
-                <Cpu className="size-4 text-primary" aria-hidden="true" />
-              </div>
-              <div className="mt-4 flex h-20 items-end gap-1.5">
-                {[40, 55, 35, 70, 60, 85, 75, 95, 80, 100].map((h, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 rounded-t bg-gradient-to-t from-primary/30 to-primary"
-                    style={{ height: `${h}%` }}
-                  />
-                ))}
-              </div>
-            </div>
+          {/* Floating Tags Stack */}
+          {/* Tag 1: .NET */}
+          <div 
+            className="absolute -left-2 md:-left-4 top-[8%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-slow"
+            style={{ animationDelay: '0ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#512bd4]" />
+            <span>.NET</span>
+          </div>
+
+          {/* Tag 2: C# */}
+          <div 
+            className="absolute -left-6 md:-left-10 top-[38%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-medium"
+            style={{ animationDelay: '1000ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#178600]" />
+            <span>C#</span>
+          </div>
+
+          {/* Tag 3: Angular */}
+          <div 
+            className="absolute -left-4 md:-left-6 top-[68%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-fast"
+            style={{ animationDelay: '500ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#dd0031]" />
+            <span>Angular</span>
+          </div>
+
+          {/* Tag 4: SQL Server */}
+          <div 
+            className="absolute left-[10%] md:left-1/4 -bottom-6 z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-medium"
+            style={{ animationDelay: '1500ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#cc292b]" />
+            <span>SQL Server</span>
+          </div>
+
+          {/* Tag 5: TypeScript */}
+          <div 
+            className="absolute -right-2 md:-right-4 top-[5%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-fast"
+            style={{ animationDelay: '2000ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#3178c6]" />
+            <span>TypeScript</span>
+          </div>
+
+          {/* Tag 6: React */}
+          <div 
+            className="absolute -right-6 md:-right-10 top-[35%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-slow"
+            style={{ animationDelay: '800ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#61dafb]" />
+            <span>React</span>
+          </div>
+
+          {/* Tag 7: Node.js */}
+          <div 
+            className="absolute -right-4 md:-right-6 top-[65%] z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-medium"
+            style={{ animationDelay: '1200ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#339933]" />
+            <span>Node.js</span>
+          </div>
+
+          {/* Tag 8: Tailwind */}
+          <div 
+            className="absolute right-[10%] md:right-1/4 -bottom-6 z-10 flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-md scale-90 md:scale-100 animate-float-fast"
+            style={{ animationDelay: '400ms' }}
+          >
+            <span className="size-2 rounded-full bg-[#38bdf8]" />
+            <span>Tailwind</span>
           </div>
         </div>
       </div>
