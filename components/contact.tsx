@@ -17,21 +17,9 @@ export function Contact() {
       setLoading(true)
 
       const templateParams = {
-        nombre: form.nombre,
+        name: form.nombre,
         email: form.email,
-        mensaje: form.mensaje,
-        from_name: form.nombre,
-        from_email: form.email,
         message: form.mensaje,
-      }
-
-      const autoReplyParams = {
-        nombre: form.nombre,
-        email: form.email,
-        to_name: form.nombre,
-        to_email: form.email,
-        from_name: "KeyWay Solutions",
-        reply_to: "keywayscontacto@gmail.com"
       }
 
       // Disparar ambas plantillas en paralelo
@@ -45,7 +33,7 @@ export function Contact() {
         emailjs.send(
           "service_qygg8mt",
           "template_4jo1ayn", // Auto-Reply Cliente
-          autoReplyParams,
+          templateParams,
           "E7FvfI4MEqw9_rACi"
         )
       ])
