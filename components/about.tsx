@@ -1,68 +1,72 @@
-import { PenTool, Code2, Rocket } from "lucide-react"
+import { Terminal, Brain, Zap } from "lucide-react"
 
-const steps = [
+const pillars = [
   {
-    icon: PenTool,
-    title: "Diseño",
+    icon: Terminal,
+    title: "Formación en Ingeniería",
     description:
-      "Entendemos tu operación y diseñamos la solución ideal junto a tu equipo.",
+      "Abordamos cada desafío con la rigurosidad y estructura que nos brinda la ingeniería de sistemas, garantizando código limpio, bases de datos optimizadas y arquitecturas escalables.",
   },
   {
-    icon: Code2,
-    title: "Desarrollo",
+    icon: Brain,
+    title: "ADN en Inteligencia Artificial",
     description:
-      "Construimos con código de calidad, iterando rápido y mostrando avances reales.",
+      "No solo desarrollamos sistemas; integramos flujos autónomos y modelos predictivos para que el software de tu empresa tome decisiones por ti.",
   },
   {
-    icon: Rocket,
-    title: "Despliegue con Vercel",
+    icon: Zap,
+    title: "Agilidad y Enfoque Boutique",
     description:
-      "Lanzamos a producción con infraestructura escalable y monitoreo continuo.",
+      "Al ser un equipo dinámico, trabajamos codo a codo con cada cliente. Nos involucramos a fondo en el negocio para transformar ideas complejas en soluciones sencillas, rápidas y eficientes.",
   },
 ]
 
 export function About() {
   return (
-    <section id="nosotros" className="relative py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <span className="text-sm font-medium text-primary">Quiénes Somos</span>
+    <section id="nosotros" className="relative py-20 sm:py-28 overflow-hidden">
+      {/* Subtle ambient glow behind */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[100px]"
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="text-sm font-medium text-primary">Nosotros</span>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-            Un equipo ágil con tecnología de punta
+            Diseñamos el futuro digital, línea por línea.
           </h2>
-          <p className="mt-5 leading-relaxed text-muted-foreground">
-            En KeyWay Solutions somos un equipo de desarrollo ágil enfocado en
-            acercar tecnología de vanguardia a empresas locales y de toda la
-            región. Combinamos experiencia en ingeniería de software con las
-            últimas herramientas de inteligencia artificial.
-          </p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Trabajamos cerca de cada cliente, entendiendo sus procesos para
-            entregar soluciones que realmente generan impacto y resultados
-            medibles.
+          <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground">
+            En KeyWay Solutions somos un equipo de desarrolladores y estudiantes avanzados
+            de Ingeniería en Sistemas. Combinamos la sólida formación analítica y científica
+            de la ingeniería de software con la agilidad y flexibilidad de la
+            Inteligencia Artificial de última generación. No creamos software
+            genérico; diseñamos arquitectura técnica a medida pensada para
+            resolver problemas complejos, automatizar operaciones y escalar
+            negocios de forma inteligente.
           </p>
         </div>
 
-        <div>
-          <h3 className="mb-8 text-lg font-semibold">Nuestra metodología</h3>
-          <ol className="relative space-y-8 border-l border-border pl-8">
-            {steps.map((step, i) => (
-              <li key={step.title} className="relative">
-                <span className="absolute -left-[2.85rem] flex size-9 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-[0_0_16px_oklch(0.72_0.12_195/0.3)]">
-                  <step.icon className="size-4" aria-hidden="true" />
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-primary">
-                    0{i + 1}
-                  </span>
-                  <h4 className="font-semibold">{step.title}</h4>
-                </div>
-                <p className="mt-1.5 leading-relaxed text-muted-foreground">
-                  {step.description}
-                </p>
-              </li>
-            ))}
-          </ol>
+        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {pillars.map((pillar) => (
+            <article
+              key={pillar.title}
+              className="group relative rounded-2xl border border-border/80 bg-card/40 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-card/75 hover:shadow-[0_0_30px_oklch(0.72_0.12_195/0.1)]"
+            >
+              {/* Icon container */}
+              <div className="flex size-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary shadow-[0_0_15px_oklch(0.72_0.12_195/0.15)] transition-all duration-300 group-hover:scale-110 group-hover:border-primary/40 group-hover:bg-primary/20">
+                <pillar.icon className="size-6" aria-hidden="true" />
+              </div>
+
+              <h3 className="mt-5 text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                {pillar.title}
+              </h3>
+
+              <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+                {pillar.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

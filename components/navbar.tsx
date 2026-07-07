@@ -17,12 +17,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#inicio" className="flex items-center gap-3">
-          <img
-            src="/kws-icon.png"
-            alt="KWS Logo"
-            className="h-7 w-auto object-contain brightness-110 contrast-105"
-          />
-          <span className="hidden text-lg font-bold tracking-tight sm:inline">
+          <span className="text-lg font-bold tracking-tight">
             KeyWay{" "}
             <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
               Solutions
