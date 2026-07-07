@@ -3,9 +3,9 @@ import { Terminal, Brain, Zap } from "lucide-react"
 const pillars = [
   {
     icon: Terminal,
-    title: "Mentalidad de Ingeniería",
+    title: "Formación en Ingeniería",
     description:
-      "Abordamos cada proyecto con rigurosidad técnica, garantizando código limpio, bases de datos optimizadas, alta disponibilidad y arquitecturas escalables.",
+      "Abordamos cada desafío con la rigurosidad y estructura que nos brinda la ingeniería de sistemas, garantizando código limpio, bases de datos optimizadas y arquitecturas escalables.",
   },
   {
     icon: Brain,
@@ -37,9 +37,9 @@ export function About() {
             Diseñamos el futuro digital, línea por línea.
           </h2>
           <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground">
-            En KeyWay Solutions somos un equipo de ingenieros en sistemas nativos
-            digitales. Combinamos la sólida formación científica de la ingeniería
-            de software tradicional con la velocidad y flexibilidad de la
+            En KeyWay Solutions somos un equipo de desarrolladores y estudiantes avanzados
+            de Ingeniería en Sistemas. Combinamos la sólida formación analítica y científica
+            de la ingeniería de software con la agilidad y flexibilidad de la
             Inteligencia Artificial de última generación. No creamos software
             genérico; diseñamos arquitectura técnica a medida pensada para
             resolver problemas complejos, automatizar operaciones y escalar
