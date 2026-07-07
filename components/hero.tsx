@@ -1,6 +1,144 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import { ArrowRight, Sparkles } from "lucide-react"
 
+const codeTokens = [
+  // Line 1
+  { text: "const", className: "text-[#3b82f6] font-semibold", line: 1 },
+  { text: " ", className: "", line: 1 },
+  { text: "keyWaySolutions", className: "text-[#14b8a6]", line: 1 },
+  { text: " = {", className: "", line: 1 },
+  
+  // Line 2
+  { text: "enfoque", className: "text-muted-foreground", line: 2 },
+  { text: ': "', className: "", line: 2 },
+  { text: "Software a medida", className: "text-[#10b981]", line: 2 },
+  { text: '",', className: "", line: 2 },
+
+  // Line 3
+  { text: "tecnologia", className: "text-muted-foreground", line: 3 },
+  { text: ': "', className: "", line: 3 },
+  { text: "Automatizaciones con IA", className: "text-[#10b981]", line: 3 },
+  { text: '",', className: "", line: 3 },
+
+  // Line 4
+  { text: "mision", className: "text-muted-foreground", line: 4 },
+  { text: ': "', className: "", line: 4 },
+  { text: "Hacer crecer tu negocio", className: "text-[#10b981]", line: 4 },
+  { text: '",', className: "", line: 4 },
+
+  // Line 5
+  { text: "desempeno", className: "text-muted-foreground", line: 5 },
+  { text: ': "', className: "", line: 5 },
+  { text: "Máxima eficiencia ⚡", className: "text-[#10b981]", line: 5 },
+  { text: '",', className: "", line: 5 },
+
+  // Line 6
+  { text: "escalable", className: "text-muted-foreground", line: 6 },
+  { text: ": ", className: "", line: 6 },
+  { text: "true", className: "text-[#3b82f6]", line: 6 },
+
+  // Line 7
+  { text: "};", className: "", line: 7 },
+]
+
+// Pre-calculate start indices
+let accumulatedLength = 0
+const processedCodeTokens = codeTokens.map((token) => {
+  const startIdx = accumulatedLength
+  accumulatedLength += token.text.length
+  return { ...token, startIdx }
+})
+
+const totalCodeChars = accumulatedLength
+
 export function Hero() {
+  const [tick, setTick] = useState(0)
+  const [showConsoleLine1, setShowConsoleLine1] = useState(false)
+  const [showConsoleLine2, setShowConsoleLine2] = useState(false)
+  const [showConsoleLine3, setShowConsoleLine3] = useState(false)
+  const [consoleText1, setConsoleText1] = useState("")
+  const [consoleText2, setConsoleText2] = useState("")
+  const [consoleText3, setConsoleText3] = useState("")
+
+  useEffect(() => {
+    let currentTick = 0
+    const codeTimer = setInterval(() => {
+      currentTick++
+      setTick(currentTick)
+      if (currentTick >= totalCodeChars) {
+        clearInterval(codeTimer)
+        
+        // Wait 500ms before executing code (simulated run)
+        setTimeout(() => {
+          setShowConsoleLine1(true)
+          let c1 = 0
+          const text1 = "// ejecutando sistema..."
+          const c1Timer = setInterval(() => {
+            c1++
+            setConsoleText1(text1.slice(0, c1))
+            if (c1 >= text1.length) {
+              clearInterval(c1Timer)
+              
+              // Wait 400ms before connecting DB
+              setTimeout(() => {
+                setShowConsoleLine2(true)
+                let c2 = 0
+                const text2 = "✓ base de datos conectada"
+                const c2Timer = setInterval(() => {
+                  c2++
+                  setConsoleText2(text2.slice(0, c2))
+                  if (c2 >= text2.length) {
+                    clearInterval(c2Timer)
+                    
+                    // Wait 300ms before showing status ready
+                    setTimeout(() => {
+                      setShowConsoleLine3(true)
+                      let c3 = 0
+                      const text3 = "status: ready 🚀"
+                      const c3Timer = setInterval(() => {
+                        c3++
+                        setConsoleText3(text3.slice(0, c3))
+                        if (c3 >= text3.length) {
+                          clearInterval(c3Timer)
+                        }
+                      }, 25)
+                    }, 300)
+                  }
+                }, 20)
+              }, 400)
+            }
+          }, 20)
+        }, 500)
+      }
+    }, 18) // 18ms per character typing
+
+    return () => {
+      clearInterval(codeTimer)
+    }
+  }, [])
+
+  const renderToken = (token: typeof processedCodeTokens[0]) => {
+    const start = token.startIdx
+    const end = start + token.text.length
+    if (tick <= start) return null
+    if (tick >= end) {
+      return <span className={token.className}>{token.text}</span>
+    }
+    const visibleLength = tick - start
+    return <span className={token.className}>{token.text.slice(0, visibleLength)}</span>
+  }
+
+  // A function to check if the cursor should be rendered on a specific line
+  const isLineTyping = (lineNum: number) => {
+    const lineTokens = processedCodeTokens.filter((t) => t.line === lineNum)
+    if (lineTokens.length === 0) return false
+    const start = lineTokens[0].startIdx
+    const end = lineTokens[lineTokens.length - 1].startIdx + lineTokens[lineTokens.length - 1].text.length
+    return tick >= start && tick < end
+  }
+
   return (
     <section
       id="inicio"
@@ -23,17 +161,19 @@ export function Hero() {
             Software a medida + Inteligencia Artificial
           </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            En KeyWay Solutions creamos Software a Medida y{" "}
+          <h1 className="mt-6 text-balance text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            Impulsamos tu negocio con{" "}
             <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
-              Automatizaciones con IA
+              software a medida
             </span>{" "}
-            que Hacen Crecer tu Negocio
+            e{" "}
+            <span className="bg-gradient-to-r from-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
+              Inteligencia Artificial
+            </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground lg:mx-0">
-            Transformamos operaciones manuales en aplicaciones web escalables y
-            eficientes.
+          <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground/80 lg:mx-0">
+            En KeyWay Solutions desarrollamos soluciones tecnológicas de alto rendimiento diseñadas exclusivamente para automatizar tus procesos y optimizar tus decisiones.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
@@ -71,49 +211,131 @@ export function Hero() {
             </div>
 
             {/* Editor Content */}
-            <div className="p-5 sm:p-6 overflow-x-auto">
+            <div className="p-5 sm:p-6 overflow-x-auto min-h-[250px]">
               {/* Simulated Code */}
               <div className="space-y-1">
-                <div>
-                  <span className="text-[#3b82f6] font-semibold">const</span>{" "}
-                  <span className="text-[#14b8a6]">keyWaySolutions</span> = {"{"}
-                </div>
-                <div className="pl-6 border-l border-border/30">
-                  <span className="text-muted-foreground">enfoque</span>:{" "}
-                  <span className="text-[#10b981]">"Software a medida"</span>,
-                </div>
-                <div className="pl-6 border-l border-border/30">
-                  <span className="text-muted-foreground">tecnologia</span>:{" "}
-                  <span className="text-[#10b981]">"Automatizaciones con IA"</span>,
-                </div>
-                <div className="pl-6 border-l border-border/30">
-                  <span className="text-muted-foreground">mision</span>:{" "}
-                  <span className="text-[#10b981]">"Hacer crecer tu negocio"</span>,
-                </div>
-                <div className="pl-6 border-l border-border/30">
-                  <span className="text-muted-foreground">desempeno</span>:{" "}
-                  <span className="text-[#10b981]">"Máxima eficiencia ⚡"</span>,
-                </div>
-                <div className="pl-6 border-l border-border/30">
-                  <span className="text-muted-foreground">escalable</span>:{" "}
-                  <span className="text-[#3b82f6]">true</span>
-                </div>
-                <div>{"};"}</div>
+                {/* Line 1 */}
+                {tick > 0 && (
+                  <div>
+                    {processedCodeTokens
+                      .filter((t) => t.line === 1)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(1) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 2 */}
+                {tick > processedCodeTokens.find((t) => t.line === 2)!.startIdx && (
+                  <div className="pl-6 border-l border-border/30">
+                    {processedCodeTokens
+                      .filter((t) => t.line === 2)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(2) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 3 */}
+                {tick > processedCodeTokens.find((t) => t.line === 3)!.startIdx && (
+                  <div className="pl-6 border-l border-border/30">
+                    {processedCodeTokens
+                      .filter((t) => t.line === 3)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(3) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 4 */}
+                {tick > processedCodeTokens.find((t) => t.line === 4)!.startIdx && (
+                  <div className="pl-6 border-l border-border/30">
+                    {processedCodeTokens
+                      .filter((t) => t.line === 4)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(4) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 5 */}
+                {tick > processedCodeTokens.find((t) => t.line === 5)!.startIdx && (
+                  <div className="pl-6 border-l border-border/30">
+                    {processedCodeTokens
+                      .filter((t) => t.line === 5)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(5) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 6 */}
+                {tick > processedCodeTokens.find((t) => t.line === 6)!.startIdx && (
+                  <div className="pl-6 border-l border-border/30">
+                    {processedCodeTokens
+                      .filter((t) => t.line === 6)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(6) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
+                {/* Line 7 */}
+                {tick > processedCodeTokens.find((t) => t.line === 7)!.startIdx && (
+                  <div>
+                    {processedCodeTokens
+                      .filter((t) => t.line === 7)
+                      .map((token, i) => (
+                        <span key={i}>{renderToken(token)}</span>
+                      ))}
+                    {isLineTyping(7) && (
+                      <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse select-none align-middle" />
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Console logs */}
-              <div className="mt-6 border-t border-border/60 pt-4 space-y-1 text-xs select-none">
-                <div className="text-emerald-500/70">
-                  // ejecutando sistema...
+              {(showConsoleLine1 || showConsoleLine2 || showConsoleLine3) && (
+                <div className="mt-6 border-t border-border/60 pt-4 space-y-1 text-xs select-none">
+                  {showConsoleLine1 && (
+                    <div className="text-emerald-500/70 flex items-center">
+                      <span>{consoleText1}</span>
+                      {consoleText1.length < 24 && (
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-500/70 animate-pulse align-middle" />
+                      )}
+                    </div>
+                  )}
+                  {showConsoleLine2 && (
+                    <div className="text-emerald-400 font-medium flex items-center gap-1">
+                      <span>{consoleText2}</span>
+                      {consoleText2.length < 25 && (
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-400 animate-pulse align-middle" />
+                      )}
+                    </div>
+                  )}
+                  {showConsoleLine3 && (
+                    <div className="text-[#3b82f6] font-semibold italic flex items-center">
+                      <span>{consoleText3}</span>
+                      {consoleText3.length < 17 && (
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-[#3b82f6] animate-pulse align-middle" />
+                      )}
+                    </div>
+                  )}
                 </div>
-                <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
-                  <span>✓</span>
-                  <span>base de datos conectada</span>
-                </div>
-                <div className="text-[#3b82f6] font-semibold italic">
-                  status: ready 🚀
-                </div>
-              </div>
+              )}
             </div>
           </div>
 

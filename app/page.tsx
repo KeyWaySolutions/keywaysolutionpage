@@ -5,12 +5,14 @@ import { TechStack } from "@/components/tech-stack"
 import { About } from "@/components/about"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { AnimatedBG } from "@/components/animated-bg"
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      <AnimatedBG />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Services />
         <TechStack />
