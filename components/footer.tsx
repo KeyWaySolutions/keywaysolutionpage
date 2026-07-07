@@ -1,5 +1,3 @@
-import { Globe, Share2, Mail } from "lucide-react"
-
 function Instagram(props: React.ComponentProps<"svg">) {
   return (
     <svg
@@ -25,9 +23,6 @@ const socials = [
     icon: Instagram,
     href: "https://www.instagram.com/keyway_solutions?igsh=aXBheWR4N3Q1c3Zy",
   },
-  { label: "Sitio web", icon: Globe, href: "#" },
-  { label: "Redes sociales", icon: Share2, href: "#" },
-  { label: "Email", icon: Mail, href: "mailto:keywayscontacto@gmail.com" },
 ]
 
 export function Footer() {
