@@ -5,39 +5,39 @@ import { ArrowRight, Sparkles } from "lucide-react"
 
 const codeTokens = [
   // Line 1
-  { text: "const", className: "text-[#3b82f6] font-semibold", line: 1 },
+  { text: "const", className: "text-[#1e60d5] font-semibold", line: 1 },
   { text: " ", className: "", line: 1 },
-  { text: "keyWaySolutions", className: "text-[#14b8a6]", line: 1 },
+  { text: "keyWaySolutions", className: "text-[#0f766e]", line: 1 },
   { text: " = {", className: "", line: 1 },
   
   // Line 2
   { text: "enfoque", className: "text-muted-foreground", line: 2 },
   { text: ': "', className: "", line: 2 },
-  { text: "Software a medida", className: "text-[#10b981]", line: 2 },
+  { text: "Software a medida", className: "text-[#047857]", line: 2 },
   { text: '",', className: "", line: 2 },
 
   // Line 3
   { text: "tecnologia", className: "text-muted-foreground", line: 3 },
   { text: ': "', className: "", line: 3 },
-  { text: "Automatizaciones con IA", className: "text-[#10b981]", line: 3 },
+  { text: "Automatizaciones con IA", className: "text-[#047857]", line: 3 },
   { text: '",', className: "", line: 3 },
 
   // Line 4
   { text: "mision", className: "text-muted-foreground", line: 4 },
   { text: ': "', className: "", line: 4 },
-  { text: "Hacer crecer tu negocio", className: "text-[#10b981]", line: 4 },
+  { text: "Hacer crecer tu negocio", className: "text-[#047857]", line: 4 },
   { text: '",', className: "", line: 4 },
 
   // Line 5
   { text: "desempeno", className: "text-muted-foreground", line: 5 },
   { text: ': "', className: "", line: 5 },
-  { text: "Máxima eficiencia ⚡", className: "text-[#10b981]", line: 5 },
+  { text: "Máxima eficiencia ⚡", className: "text-[#047857]", line: 5 },
   { text: '",', className: "", line: 5 },
 
   // Line 6
   { text: "escalable", className: "text-muted-foreground", line: 6 },
   { text: ": ", className: "", line: 6 },
-  { text: "true", className: "text-[#3b82f6]", line: 6 },
+  { text: "true", className: "text-[#1e60d5]", line: 6 },
 
   // Line 7
   { text: "};", className: "", line: 7 },
@@ -151,7 +151,7 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,oklch(0.33_0.03_235/0.25)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.33_0.03_235/0.25)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,oklch(0.2_0.015_250/0.05)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.2_0.015_250/0.05)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
       />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
@@ -311,26 +311,26 @@ export function Hero() {
               {(showConsoleLine1 || showConsoleLine2 || showConsoleLine3) && (
                 <div className="mt-6 border-t border-border/60 pt-4 space-y-1 text-xs select-none">
                   {showConsoleLine1 && (
-                    <div className="text-emerald-500/70 flex items-center">
+                    <div className="text-emerald-700/80 flex items-center">
                       <span>{consoleText1}</span>
                       {consoleText1.length < 24 && (
-                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-500/70 animate-pulse align-middle" />
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-700/80 animate-pulse align-middle" />
                       )}
                     </div>
                   )}
                   {showConsoleLine2 && (
-                    <div className="text-emerald-400 font-medium flex items-center gap-1">
+                    <div className="text-emerald-600 font-medium flex items-center gap-1">
                       <span>{consoleText2}</span>
                       {consoleText2.length < 25 && (
-                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-400 animate-pulse align-middle" />
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-600 animate-pulse align-middle" />
                       )}
                     </div>
                   )}
                   {showConsoleLine3 && (
-                    <div className="text-[#3b82f6] font-semibold italic flex items-center">
+                    <div className="text-[#1e60d5] font-semibold italic flex items-center">
                       <span>{consoleText3}</span>
                       {consoleText3.length < 17 && (
-                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-[#3b82f6] animate-pulse align-middle" />
+                        <span className="inline-block w-1.5 h-3 ml-0.5 bg-[#1e60d5] animate-pulse align-middle" />
                       )}
                     </div>
                   )}

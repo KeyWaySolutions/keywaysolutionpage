@@ -107,7 +107,7 @@ export function AnimatedBG() {
         // A straight mapping hue = deg produces a complete beautiful circular color wheel!
         const hue = deg
         const saturation = 95
-        const lightness = 62
+        const lightness = 48
 
         list.push({
           x,
@@ -167,7 +167,7 @@ export function AnimatedBG() {
 
         if (projX >= -20 && projX <= width + 20 && projY >= -20 && projY <= height + 20) {
           const drawSize = p.size * scale
-          const opacity = p.opacity * scale * 0.6
+          const opacity = p.opacity * scale * 0.75
 
           ctx.beginPath()
           ctx.arc(projX, projY, Math.max(0.5, drawSize), 0, Math.PI * 2)
@@ -194,7 +194,7 @@ export function AnimatedBG() {
     <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden bg-background">
       {/* Subtle grid background */}
       <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,oklch(0.33_0.03_235/0.04)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.33_0.03_235/0.04)_1px,transparent_1px)] bg-[size:60px_60px] opacity-60"
+        className="absolute inset-0 bg-[linear-gradient(to_right,oklch(0.2_0.015_250/0.06)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.2_0.015_250/0.06)_1px,transparent_1px)] bg-[size:60px_60px] opacity-60"
         aria-hidden="true"
       />
 
@@ -207,7 +207,7 @@ export function AnimatedBG() {
 
       {/* Ambient glowing blobs */}
       <div
-        className="absolute size-[550px] rounded-full bg-primary/4 blur-[130px] animate-pulse"
+        className="absolute size-[550px] rounded-full bg-primary/5 blur-[130px] animate-pulse"
         style={{
           top: "15%",
           left: "25%",
@@ -217,7 +217,7 @@ export function AnimatedBG() {
         aria-hidden="true"
       />
       <div
-        className="absolute size-[650px] rounded-full bg-chart-2/3 blur-[160px] animate-pulse"
+        className="absolute size-[650px] rounded-full bg-chart-2/4 blur-[160px] animate-pulse"
         style={{
           bottom: "10%",
           right: "15%",
@@ -230,7 +230,7 @@ export function AnimatedBG() {
 
       {/* Interactive Mouse Spotlight Glow */}
       <div
-        className="absolute size-[400px] rounded-full bg-primary/6 blur-[90px] will-change-transform"
+        className="absolute size-[400px] rounded-full bg-primary/8 blur-[90px] will-change-transform"
         style={{
           transform: `translate3d(calc(${mousePos.x}px - 50%), calc(${mousePos.y}px - 50%), 0)`,
         }}
@@ -239,7 +239,7 @@ export function AnimatedBG() {
 
       {/* Vignette mask overlay */}
       <div 
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,oklch(0.16_0.02_235/0.8)_85%,var(--background)_100%)]" 
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,oklch(0.99_0.003_250/0.75)_80%,var(--background)_100%)]" 
         aria-hidden="true"
       />
     </div>
