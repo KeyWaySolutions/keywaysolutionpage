@@ -17,9 +17,9 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#inicio" className="flex items-center gap-3">
-          <span className="text-lg font-bold tracking-tight">
+          <span className="text-lg font-bold tracking-tight text-slate-900">
             KeyWay{" "}
-            <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
+            <span className="text-[#059669]">
               Solutions
             </span>
           </span>
@@ -39,7 +39,7 @@ export function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-[0_0_20px_oklch(0.72_0.12_195/0.45)] transition-all hover:brightness-110 md:inline-flex"
+          className="hidden rounded-lg bg-[#00dfa2] px-4 py-2 text-sm font-semibold text-[#0f172a] shadow-[0_0_20px_rgba(0,223,162,0.4)] transition-all hover:brightness-105 md:inline-flex"
         >
           Contacto
         </a>
@@ -76,7 +76,7 @@ export function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-medium text-primary-foreground"
+            className="mt-2 rounded-lg bg-[#00dfa2] px-3 py-2.5 text-center text-sm font-semibold text-[#0f172a] shadow-[0_0_15px_rgba(0,223,162,0.3)] hover:brightness-105"
           >
             Contacto
           </a>

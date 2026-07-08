@@ -122,7 +122,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110 disabled:opacity-75 disabled:pointer-events-none cursor-pointer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#00dfa2] px-6 py-3 text-sm font-semibold text-[#0f172a] shadow-[0_0_24px_rgba(0,223,162,0.4)] transition-all hover:brightness-105 disabled:opacity-75 disabled:pointer-events-none cursor-pointer"
             >
               {loading ? (
                 <>

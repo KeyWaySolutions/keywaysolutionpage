@@ -35,9 +35,9 @@ export function Footer() {
             alt="KWS Logo"
             className="h-8 w-auto object-contain brightness-110 contrast-105"
           />
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="text-lg font-semibold tracking-tight text-slate-900">
             KeyWay{" "}
-            <span className="bg-gradient-to-r from-[#1e78c2] via-[#17a3ac] to-[#2bb673] bg-clip-text text-transparent">
+            <span className="text-[#059669]">
               Solutions
             </span>
           </span>

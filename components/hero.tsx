@@ -5,39 +5,39 @@ import { ArrowRight, Sparkles } from "lucide-react"
 
 const codeTokens = [
   // Line 1
-  { text: "const", className: "text-[#1e60d5] font-semibold", line: 1 },
+  { text: "const", className: "text-[#2563eb] font-semibold", line: 1 },
   { text: " ", className: "", line: 1 },
   { text: "keyWaySolutions", className: "text-[#0f766e]", line: 1 },
   { text: " = {", className: "", line: 1 },
   
   // Line 2
-  { text: "enfoque", className: "text-muted-foreground", line: 2 },
+  { text: "enfoque", className: "text-slate-700", line: 2 },
   { text: ': "', className: "", line: 2 },
-  { text: "Software a medida", className: "text-[#047857]", line: 2 },
+  { text: "Software a medida", className: "text-[#059669]", line: 2 },
   { text: '",', className: "", line: 2 },
 
   // Line 3
-  { text: "tecnologia", className: "text-muted-foreground", line: 3 },
+  { text: "tecnologia", className: "text-slate-700", line: 3 },
   { text: ': "', className: "", line: 3 },
-  { text: "Automatizaciones con IA", className: "text-[#047857]", line: 3 },
+  { text: "Automatizaciones con IA", className: "text-[#059669]", line: 3 },
   { text: '",', className: "", line: 3 },
 
   // Line 4
-  { text: "mision", className: "text-muted-foreground", line: 4 },
+  { text: "mision", className: "text-slate-700", line: 4 },
   { text: ': "', className: "", line: 4 },
-  { text: "Hacer crecer tu negocio", className: "text-[#047857]", line: 4 },
+  { text: "Hacer crecer tu negocio", className: "text-[#059669]", line: 4 },
   { text: '",', className: "", line: 4 },
 
   // Line 5
-  { text: "desempeno", className: "text-muted-foreground", line: 5 },
+  { text: "desempeno", className: "text-slate-700", line: 5 },
   { text: ': "', className: "", line: 5 },
-  { text: "Máxima eficiencia ⚡", className: "text-[#047857]", line: 5 },
+  { text: "Máxima eficiencia ⚡", className: "text-[#059669]", line: 5 },
   { text: '",', className: "", line: 5 },
 
   // Line 6
-  { text: "escalable", className: "text-muted-foreground", line: 6 },
+  { text: "escalable", className: "text-slate-700", line: 6 },
   { text: ": ", className: "", line: 6 },
-  { text: "true", className: "text-[#1e60d5]", line: 6 },
+  { text: "true", className: "text-[#2563eb]", line: 6 },
 
   // Line 7
   { text: "};", className: "", line: 7 },
@@ -161,13 +161,13 @@ export function Hero() {
             Software a medida + Inteligencia Artificial
           </span>
 
-          <h1 className="mt-6 text-balance text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-6 text-balance text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Impulsamos tu negocio con{" "}
-            <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
+            <span className="text-[#059669]">
               software a medida
             </span>{" "}
             e{" "}
-            <span className="bg-gradient-to-r from-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
+            <span className="text-[#059669]">
               Inteligencia Artificial
             </span>
           </h1>
@@ -179,14 +179,14 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
             <a
               href="#contacto"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_28px_oklch(0.72_0.12_195/0.45)] transition-all hover:brightness-110 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#00dfa2] px-6 py-3 text-sm font-semibold text-[#0f172a] shadow-[0_0_28px_rgba(0,223,162,0.45)] transition-all hover:brightness-105 sm:w-auto"
             >
               Agendar Consulta
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#servicios"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-900 bg-card px-6 py-3 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50 sm:w-auto"
             >
               Ver Soluciones
             </a>
