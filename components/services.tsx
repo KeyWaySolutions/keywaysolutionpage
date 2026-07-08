@@ -12,16 +12,20 @@ const services = [
       "Soluciones digitales robustas, escalables y optimizadas para potenciar tu presencia en línea y eficiencia operativa.",
     points: [
       {
-        title: "Landing Pages",
-        detail: "Diseños de alto impacto orientados 100% a la conversión de visitas en clientes.",
+        title: "Landing Page",
+        detail: "Captar clientes rápido y al menor costo posible. Es una página enfocada en una sola cosa: lograr que quien entra, compre o deje sus datos de contacto. Es la herramienta perfecta (y obligatoria) si vas a invertir en publicidad en redes sociales o Google, porque transforma las visitas en ventas directas.",
       },
       {
-        title: "Webs Institucionales",
-        detail: "Sitios corporativos completos para reflejar la seriedad y los valores de tu marca.",
+        title: "Web Corporativa",
+        detail: "Proyectar profesionalismo y generar confianza inmediata. ¿Por qué elegirla? Es la oficina digital y la carta de presentación de tu marca. Demuestra la seriedad de tu empresa, explica tus servicios con claridad y convence a futuros clientes (especialmente B2B) de que eres la autoridad en tu sector.",
       },
       {
-        title: "Sistemas de Gestión",
-        detail: "Plataformas personalizadas (ERPs/CRMs) diseñadas para automatizar y controlar los procesos internos de tu negocio.",
+        title: "E-commerce",
+        detail: "Vender tus productos las 24 horas, todos los días. Es un local que nunca cierra. Tus clientes pueden ver tu catálogo, pagar y organizar el envío por su cuenta de forma 100% segura. Automatizamos todo el proceso de venta y stock para que tu negocio facture incluso mientras duermes.",
+      },
+      {
+        title: "Sistemas de Gestión a Medida",
+        detail: "Tomar el control total de tu negocio y ahorrar tiempo. Si tu día a día es un caos de planillas compartidas, mensajes perdidos y tareas repetitivas, creamos un sistema (CRM/ERP) exclusivo para ti. Centraliza tu información, agiliza el trabajo de tu equipo y elimina los costosos errores humanos.",
       },
     ],
   },
