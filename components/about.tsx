@@ -30,13 +30,13 @@ export function About() {
         className="pointer-events-none absolute top-1/2 left-1/2 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-[1300px] px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-sm font-medium text-primary">Nosotros</span>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+          <span className="font-mono text-xs font-medium uppercase tracking-wider text-primary">Nosotros</span>
+          <h2 className="mt-3 text-balance text-3xl font-medium tracking-[-0.02em] sm:text-4xl text-foreground">
             Diseñamos el futuro digital, línea por línea.
           </h2>
-          <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-pretty text-base font-normal leading-relaxed text-muted-foreground/90">
             En KeyWay Solutions somos un equipo de desarrolladores y estudiantes avanzados
             de Ingeniería en Sistemas. Combinamos la sólida formación analítica y científica
             de la ingeniería de software con la agilidad y flexibilidad de la
@@ -47,22 +47,22 @@ export function About() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="group relative rounded-2xl border border-border/80 bg-card/40 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-card/75 hover:shadow-[0_0_30px_oklch(0.72_0.12_195/0.1)]"
+              className="group relative rounded-[4px] border border-border/80 bg-card/60 p-6 backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:bg-card/80"
             >
               {/* Icon container */}
-              <div className="flex size-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary shadow-[0_0_15px_oklch(0.72_0.12_195/0.15)] transition-all duration-300 group-hover:scale-110 group-hover:border-primary/40 group-hover:bg-primary/20">
-                <pillar.icon className="size-6" aria-hidden="true" />
+              <div className="flex size-10 items-center justify-center rounded-[4px] border border-primary/30 bg-primary/10 text-primary transition-all duration-200 group-hover:bg-primary/20">
+                <pillar.icon className="size-5" aria-hidden="true" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold tracking-tight text-foreground sm:text-xl">
+              <h3 className="mt-4 text-base font-medium tracking-[-0.01em] text-foreground sm:text-lg">
                 {pillar.title}
               </h3>
 
-              <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2.5 text-pretty text-sm font-normal leading-relaxed text-muted-foreground/80">
                 {pillar.description}
               </p>
             </article>
