@@ -84,68 +84,68 @@ export function Services() {
         className="pointer-events-none absolute top-1/2 left-1/2 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-[1300px] px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-medium text-primary">Servicios</span>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+          <span className="font-mono text-xs font-medium uppercase tracking-wider text-primary">Servicios</span>
+          <h2 className="mt-3 text-balance text-3xl font-medium tracking-[-0.02em] sm:text-4xl text-foreground">
             Soluciones que impulsan tu operación
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty font-normal leading-relaxed text-muted-foreground">
             Combinamos ingeniería de software sólida con inteligencia artificial
             para resolver problemas reales.
           </p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-3xl flex flex-col gap-4">
+        <div className="mx-auto mt-12 max-w-3xl flex flex-col gap-3">
           {services.map((service, index) => {
             const isActive = activeIndex === index
             return (
               <article
                 key={service.title}
-                className={`group relative rounded-2xl border bg-card/40 transition-all duration-300 ${
+                className={`group relative rounded-[4px] border bg-card/60 transition-all duration-200 ${
                   isActive
-                    ? "border-primary/50 bg-card/85 shadow-[0_0_30px_oklch(0.72_0.12_195/0.08)]"
-                    : "border-border hover:border-primary/30 hover:bg-card/60"
+                    ? "border-primary/40 bg-card/90 shadow-[0_0_24px_oklch(0.70_0.16_160/0.06)]"
+                    : "border-border/80 hover:border-border hover:bg-card/75"
                 }`}
                 onMouseEnter={() => setActiveIndex(index)}
                 onClick={() => setActiveIndex(index)}
               >
                 {/* Header / Trigger */}
-                <div className="flex cursor-pointer items-center justify-between p-6 sm:p-7">
-                  <div className="flex items-center gap-4 sm:gap-5">
+                <div className="flex cursor-pointer items-center justify-between p-6">
+                  <div className="flex items-center gap-4">
                     {/* Icon container */}
                     <div
-                      className={`flex size-11 items-center justify-center rounded-xl border transition-all duration-300 ${
+                      className={`flex size-10 items-center justify-center rounded-[4px] border transition-all duration-200 ${
                         isActive
-                          ? "border-primary/30 bg-primary/10 text-primary shadow-[0_0_15px_oklch(0.72_0.12_195/0.15)]"
-                          : "border-border bg-muted/40 text-muted-foreground group-hover:text-foreground"
+                          ? "border-primary/40 bg-primary/10 text-primary"
+                          : "border-border/80 bg-muted/40 text-muted-foreground group-hover:text-foreground"
                       }`}
                     >
-                      <service.icon className="size-5" aria-hidden="true" />
+                      <service.icon className="size-4.5" aria-hidden="true" />
                     </div>
 
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex items-baseline gap-2.5">
                       <span
-                        className={`font-mono text-xs font-semibold tracking-wider transition-colors duration-300 ${
-                          isActive ? "text-primary" : "text-muted-foreground/50"
+                        className={`font-mono text-xs font-normal tracking-wide transition-colors duration-200 ${
+                          isActive ? "text-primary" : "text-muted-foreground/60"
                         }`}
                       >
                         {service.id}
                       </span>
-                      <h3 className="text-lg font-bold tracking-tight sm:text-xl">
+                      <h3 className="text-base font-medium tracking-[-0.01em] sm:text-lg text-foreground">
                         {service.title}
                       </h3>
                     </div>
                   </div>
 
                   <span
-                    className={`flex size-8 items-center justify-center rounded-full border border-border bg-background/50 transition-all duration-300 ${
+                    className={`flex size-7 items-center justify-center rounded-[4px] border transition-all duration-200 ${
                       isActive
-                        ? "rotate-180 border-primary/30 text-primary bg-primary/5 shadow-[0_0_10px_oklch(0.72_0.12_195/0.1)]"
-                        : "text-muted-foreground group-hover:text-foreground"
+                        ? "rotate-180 border-primary/30 text-primary bg-primary/10"
+                        : "border-border/80 bg-background/50 text-muted-foreground group-hover:text-foreground"
                     }`}
                   >
-                    <ChevronDown className="size-4" aria-hidden="true" />
+                    <ChevronDown className="size-3.5" aria-hidden="true" />
                   </span>
                 </div>
 
@@ -158,25 +158,25 @@ export function Services() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-border/50 px-6 pb-7 pt-5 sm:px-7 sm:pb-8">
+                    <div className="border-t border-border/70 p-6">
                       {/* Description */}
-                      <p className="pl-0 sm:pl-15 text-pretty text-base leading-relaxed text-muted-foreground">
+                      <p className="pl-0 sm:pl-14 text-pretty text-sm font-normal leading-relaxed text-muted-foreground/90">
                         {service.description}
                       </p>
 
                       {/* Key Points */}
-                      <ul className="mt-6 space-y-4 pl-0 sm:pl-15">
+                      <ul className="mt-5 space-y-3.5 pl-0 sm:pl-14">
                         {service.points.map((point) => (
                           <li
                             key={point.title}
                             className="group/item flex items-start gap-3 text-pretty"
                           >
-                            <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary transition-transform duration-300 group-hover/item:scale-125 shadow-[0_0_8px_oklch(0.72_0.12_195/0.6)]" />
-                            <div className="leading-relaxed">
-                              <span className="font-semibold text-foreground">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-[1px] bg-primary transition-transform duration-200 group-hover/item:scale-125" />
+                            <div className="text-sm leading-relaxed">
+                              <span className="font-medium text-foreground">
                                 {point.title}:{" "}
                               </span>
-                              <span className="text-muted-foreground/90">
+                              <span className="text-muted-foreground/80">
                                 {point.detail}
                               </span>
                             </div>

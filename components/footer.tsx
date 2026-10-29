@@ -27,15 +27,15 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 sm:px-6 md:flex-row">
+    <footer className="border-t border-border/80 bg-background">
+      <div className="mx-auto flex max-w-[1300px] flex-col items-center justify-between gap-6 px-6 py-8 md:flex-row">
         <div className="flex items-center gap-3">
           <img
             src="/kws-icon.png"
             alt="KWS Logo"
-            className="h-8 w-auto object-contain brightness-110 contrast-105"
+            className="h-7 w-auto object-contain brightness-110 contrast-105"
           />
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="text-base font-medium tracking-tight">
             KeyWay{" "}
             <span className="bg-gradient-to-r from-[#1e78c2] via-[#17a3ac] to-[#2bb673] bg-clip-text text-transparent">
               Solutions
@@ -43,9 +43,8 @@ export function Footer() {
           </span>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} KeyWay Solutions. Todos los derechos
-          reservados.
+        <p className="text-center font-mono text-xs text-muted-foreground/70">
+          © {new Date().getFullYear()} KeyWay Solutions. Todos los derechos reservados.
         </p>
 
         <div className="flex items-center gap-3">
@@ -54,7 +53,7 @@ export function Footer() {
               key={social.label}
               href={social.href}
               aria-label={social.label}
-              className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-300 hover:scale-105 hover:border-primary/60 hover:text-primary hover:shadow-md hover:shadow-primary/10"
+              className="flex size-8 items-center justify-center rounded-[4px] border border-border/80 text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-primary hover:bg-card/60"
             >
               <social.icon className="size-4" aria-hidden="true" />
             </a>

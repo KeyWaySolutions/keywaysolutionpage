@@ -57,24 +57,24 @@ export function Contact() {
         className="pointer-events-none absolute -bottom-20 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]"
       />
       
-      <div className="relative mx-auto max-w-2xl px-4 sm:px-6 text-center">
+      <div className="relative mx-auto max-w-2xl px-6 text-center">
         <div>
-          <span className="text-sm font-medium text-primary">Contacto</span>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+          <span className="font-mono text-xs font-medium uppercase tracking-wider text-primary">Contacto</span>
+          <h2 className="mt-3 text-balance text-3xl font-medium tracking-[-0.02em] sm:text-4xl text-foreground">
             Hablemos de tu proyecto
           </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty font-normal leading-relaxed text-muted-foreground/90">
             Contanos qué necesitás y te respondemos a la brevedad. Sin compromiso.
           </p>
         </div>
 
         {/* Form container */}
-        <div className="mt-10 text-left rounded-2xl border border-border bg-card/60 p-6 sm:p-8 backdrop-blur">
+        <div className="mt-10 text-left rounded-[4px] border border-border/80 bg-card/60 p-6 sm:p-8 backdrop-blur shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label
                 htmlFor="nombre"
-                className="mb-2 block text-sm font-medium"
+                className="mb-2 block font-mono text-xs font-medium text-foreground/90 tracking-wide"
               >
                 Nombre
               </label>
@@ -85,11 +85,11 @@ export function Contact() {
                 value={form.nombre}
                 onChange={(e) => setForm({ ...form, nombre: e.target.value })}
                 placeholder="Tu nombre"
-                className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-[4px] border border-border/80 bg-background/80 px-3.5 py-2.5 text-sm outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary focus:ring-1 focus:ring-primary/40"
               />
             </div>
             <div>
-              <label htmlFor="email" className="mb-2 block text-sm font-medium">
+              <label htmlFor="email" className="mb-2 block font-mono text-xs font-medium text-foreground/90 tracking-wide">
                 Email
               </label>
               <input
@@ -99,13 +99,13 @@ export function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="tu@email.com"
-                className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-[4px] border border-border/80 bg-background/80 px-3.5 py-2.5 text-sm outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary focus:ring-1 focus:ring-primary/40"
               />
             </div>
             <div>
               <label
                 htmlFor="mensaje"
-                className="mb-2 block text-sm font-medium"
+                className="mb-2 block font-mono text-xs font-medium text-foreground/90 tracking-wide"
               >
                 Mensaje
               </label>
@@ -116,13 +116,13 @@ export function Contact() {
                 value={form.mensaje}
                 onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                 placeholder="Contanos sobre tu proyecto..."
-                className="w-full resize-none rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/30"
+                className="w-full resize-none rounded-[4px] border border-border/80 bg-background/80 px-3.5 py-2.5 text-sm outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary focus:ring-1 focus:ring-primary/40"
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_oklch(0.72_0.12_195/0.4)] transition-all hover:brightness-110 disabled:opacity-75 disabled:pointer-events-none cursor-pointer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-[4px] bg-primary px-[1.35em] py-[0.78em] text-sm font-medium text-primary-foreground shadow-[0_0_24px_oklch(0.70_0.16_160/0.25)] transition-all hover:brightness-110 disabled:opacity-75 disabled:pointer-events-none cursor-pointer"
             >
               {loading ? (
                 <>
