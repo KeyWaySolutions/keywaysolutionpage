@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -12,6 +12,17 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY >= 400)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-xl">
@@ -39,7 +50,14 @@ export function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden rounded-[4px] bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground shadow-[0_0_20px_oklch(0.70_0.16_160/0.25)] transition-all hover:brightness-110 md:inline-flex"
+          tabIndex={scrolled ? 0 : -1}
+          aria-hidden={!scrolled}
+          className={cn(
+            "hidden md:inline-flex items-center justify-center rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-3.5 py-1.5 text-xs font-medium text-zinc-950 shadow-[0_0_20px_rgba(0,176,116,0.3)] transition-all duration-300",
+            scrolled
+              ? "opacity-100 pointer-events-auto translate-y-0"
+              : "opacity-0 pointer-events-none translate-y-1"
+          )}
         >
           Contacto
         </a>
@@ -76,7 +94,7 @@ export function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-[4px] bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground"
+            className="mt-2 rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-3.5 py-2 text-center text-xs font-medium text-zinc-950 transition-colors"
           >
             Contacto
           </a>

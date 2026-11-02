@@ -64,38 +64,30 @@ export function Hero() {
           />
         </div>
 
-        {/* Clean KWS Brand Typography */}
-        <h1 className="mt-8 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-foreground">
-          KeyWay{" "}
-          <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
-            Solutions
-          </span>
+        {/* Slogan with clean typography, medium weight, high contrast and subtle dark drop-shadow */}
+        <h1 className="mt-7 sm:mt-8 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-zinc-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          El camino a tu solución
         </h1>
 
-        <p className="mt-2 text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-muted-foreground/80">
+        {/* Subtle technical description line */}
+        <p className="mt-2.5 text-xs font-mono uppercase tracking-widest text-zinc-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           Software a Medida & Automatizaciones con IA
         </p>
 
-        {/* Minimalist Action Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xs sm:max-w-none">
+        {/* Cursor-inspired Single Protagonist CTA */}
+        <div className="mt-8 flex items-center justify-center">
           <a
             href="#contacto"
-            className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[4px] bg-primary px-[1.35em] py-[0.78em] text-sm font-medium text-primary-foreground shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-all hover:brightness-110 active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-6 py-2.5 text-sm font-medium text-zinc-950 shadow-[0_0_24px_rgba(0,176,116,0.3)] transition-all duration-200 hover:brightness-105 active:scale-[0.98]"
           >
             <span>Agendar Consulta</span>
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-          <a
-            href="#servicios"
-            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[4px] border border-border/80 bg-card/70 px-[1.35em] py-[0.78em] text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:bg-muted/70 hover:border-border active:scale-[0.98]"
-          >
-            <span>Ver Soluciones</span>
-          </a>
         </div>
 
-        {/* Interactive guidance tag */}
-        <div className="mt-8 flex items-center gap-2 rounded-[4px] border border-border/80 bg-card/60 px-3 py-1 font-mono text-[11px] text-muted-foreground backdrop-blur-sm">
-          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
+        {/* Discreet guidance indicator closer to the bottom without heavy frame */}
+        <div className="mt-12 sm:mt-16 flex items-center gap-2 font-mono text-[11px] text-zinc-500 opacity-60 hover:opacity-100 transition-opacity cursor-default select-none">
+          <span className="size-1 rounded-full bg-[#00b074] animate-pulse" />
           <span>Haz clic y arrastra para interactuar con Hyperspeed</span>
         </div>
       </div>
