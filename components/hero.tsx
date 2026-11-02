@@ -64,13 +64,13 @@ export function Hero() {
           />
         </div>
 
-        {/* Unified Technical Slogan */}
-        <h1 className="mt-7 sm:mt-8 font-mono text-sm sm:text-base font-medium uppercase tracking-[0.25em] text-zinc-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+        {/* Editorial Sans Slogan with subtle vertical gradient and drop shadow */}
+        <h1 className="mt-4 mb-7 text-xl md:text-2xl font-normal tracking-tight bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
           El camino a tu solución
         </h1>
 
         {/* Cursor-inspired Single Protagonist CTA */}
-        <div className="mt-8 sm:mt-9 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <a
             href="#contacto"
             className="group inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-6 py-2.5 text-sm font-medium text-zinc-950 shadow-[0_0_24px_rgba(0,176,116,0.3)] transition-all duration-200 hover:brightness-105 active:scale-[0.98]"
@@ -78,12 +78,6 @@ export function Hero() {
             <span>Agendar Consulta</span>
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-        </div>
-
-        {/* Discreet guidance indicator closer to the bottom without heavy frame */}
-        <div className="mt-12 sm:mt-16 flex items-center gap-2 font-mono text-[11px] text-zinc-500 opacity-60 hover:opacity-100 transition-opacity cursor-default select-none">
-          <span className="size-1 rounded-full bg-[#00b074] animate-pulse" />
-          <span>Haz clic y arrastra para interactuar con Hyperspeed</span>
         </div>
       </div>
     </section>
