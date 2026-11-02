@@ -50,7 +50,7 @@ export function Hero() {
 
       {/* Centered KWS Vector Logo & Content */}
       <div className="relative z-20 flex flex-col items-center justify-center px-4 text-center select-none pointer-events-auto">
-        <div className="relative group flex items-center justify-center">
+        <div className="relative group flex items-center justify-center w-full max-w-[290px] xs:max-w-[340px] sm:max-w-md md:max-w-lg lg:max-w-xl px-2 py-1 overflow-visible">
           {/* Subtle ambient diffuse glow in KWS colors for contrast against hyperspeed light trails */}
           <div 
             aria-hidden="true"
@@ -59,7 +59,7 @@ export function Hero() {
           
           {/* Native Vector SVG Logo with transparent background and soft glow */}
           <KWSLogo 
-            className="w-full max-w-[280px] sm:max-w-md md:max-w-lg lg:max-w-xl h-auto drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)] drop-shadow-[0_0_24px_rgba(33,177,118,0.25)] transition-transform duration-500 hover:scale-[1.02]"
+            className="w-full h-auto overflow-visible drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)] drop-shadow-[0_0_24px_rgba(33,177,118,0.25)] transition-transform duration-500 hover:scale-[1.02]"
             aria-label="KeyWay Solutions Logo"
           />
         </div>
