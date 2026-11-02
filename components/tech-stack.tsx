@@ -15,21 +15,21 @@ export function TechStack() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 bg-primary/5 blur-3xl"
       />
-      <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-        <span className="text-sm font-medium text-primary">Tecnologías</span>
-        <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+      <div className="mx-auto max-w-[1300px] px-6 text-center">
+        <span className="font-mono text-xs font-medium uppercase tracking-wider text-primary">Tecnologías</span>
+        <h2 className="mt-3 text-balance text-3xl font-medium tracking-[-0.02em] sm:text-4xl text-foreground">
           Stack moderno y confiable
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-xl text-pretty font-normal leading-relaxed text-muted-foreground/90">
           Usamos herramientas de nivel empresarial para construir productos
           rápidos, seguros y mantenibles.
         </p>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-border bg-card/70 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/60 hover:text-primary hover:shadow-[0_0_18px_oklch(0.7_0.18_235/0.25)]"
+              className="rounded-[4px] border border-border/80 bg-card/60 px-4 py-2 font-mono text-xs sm:text-sm font-normal text-foreground transition-all duration-200 hover:border-primary/40 hover:text-primary hover:bg-card/85"
             >
               {tech}
             </span>

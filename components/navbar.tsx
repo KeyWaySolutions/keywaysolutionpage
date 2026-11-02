@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -12,12 +12,23 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY >= 400)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-xl">
+      <nav className="relative mx-auto flex h-14 max-w-[1300px] items-center justify-between px-6">
         <a href="#inicio" className="flex items-center gap-3">
-          <span className="text-lg font-bold tracking-tight">
+          <span className="text-base sm:text-lg font-medium tracking-tight">
             KeyWay{" "}
             <span className="bg-gradient-to-r from-[#3b82f6] via-[#14b8a6] to-[#10b981] bg-clip-text text-transparent">
               Solutions
@@ -25,12 +36,13 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        {/* Mathematically centered navigation links aligned with screen & hero axis */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-normal text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -39,7 +51,14 @@ export function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-[0_0_20px_oklch(0.72_0.12_195/0.45)] transition-all hover:brightness-110 md:inline-flex"
+          tabIndex={scrolled ? 0 : -1}
+          aria-hidden={!scrolled}
+          className={cn(
+            "hidden md:inline-flex items-center justify-center rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-3.5 py-1.5 text-xs font-medium text-zinc-950 shadow-[0_0_20px_rgba(0,176,116,0.3)] transition-all duration-300",
+            scrolled
+              ? "opacity-100 pointer-events-auto translate-y-0"
+              : "opacity-0 pointer-events-none translate-y-1"
+          )}
         >
           Contacto
         </a>
@@ -47,28 +66,28 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-foreground md:hidden"
+          className="inline-flex size-8 items-center justify-center rounded-[4px] border border-border/80 text-foreground md:hidden"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          {open ? <X className="size-4" /> : <Menu className="size-4" />}
         </button>
       </nav>
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-background/95 md:hidden",
+          "overflow-hidden border-t border-border/80 bg-background/95 md:hidden",
           open ? "max-h-72" : "max-h-0",
           "transition-[max-height] duration-300 ease-in-out",
         )}
       >
-        <div className="flex flex-col gap-1 px-4 py-4">
+        <div className="flex flex-col gap-1 px-6 py-4">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="rounded-[4px] px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </a>
@@ -76,7 +95,7 @@ export function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-medium text-primary-foreground"
+            className="mt-2 rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-3.5 py-2 text-center text-xs font-medium text-zinc-950 transition-colors"
           >
             Contacto
           </a>
