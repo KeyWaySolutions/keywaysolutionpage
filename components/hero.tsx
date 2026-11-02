@@ -64,18 +64,13 @@ export function Hero() {
           />
         </div>
 
-        {/* Slogan with clean typography, medium weight, high contrast and subtle dark drop-shadow */}
-        <h1 className="mt-7 sm:mt-8 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-zinc-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+        {/* Unified Technical Slogan */}
+        <h1 className="mt-7 sm:mt-8 font-mono text-sm sm:text-base font-medium uppercase tracking-[0.25em] text-zinc-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
           El camino a tu solución
         </h1>
 
-        {/* Subtle technical description line */}
-        <p className="mt-2.5 text-xs font-mono uppercase tracking-widest text-zinc-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-          Software a Medida & Automatizaciones con IA
-        </p>
-
         {/* Cursor-inspired Single Protagonist CTA */}
-        <div className="mt-8 flex items-center justify-center">
+        <div className="mt-8 sm:mt-9 flex items-center justify-center">
           <a
             href="#contacto"
             className="group inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#00b074] hover:bg-[#00c882] px-6 py-2.5 text-sm font-medium text-zinc-950 shadow-[0_0_24px_rgba(0,176,116,0.3)] transition-all duration-200 hover:brightness-105 active:scale-[0.98]"

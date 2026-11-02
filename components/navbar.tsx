@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-xl">
-      <nav className="mx-auto flex h-14 max-w-[1300px] items-center justify-between px-6">
+      <nav className="relative mx-auto flex h-14 max-w-[1300px] items-center justify-between px-6">
         <a href="#inicio" className="flex items-center gap-3">
           <span className="text-base sm:text-lg font-medium tracking-tight">
             KeyWay{" "}
@@ -36,7 +36,8 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        {/* Mathematically centered navigation links aligned with screen & hero axis */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
