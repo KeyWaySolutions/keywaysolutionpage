@@ -1,6 +1,8 @@
 "use client"
 
 import Hyperspeed from "@/components/ui/Hyperspeed"
+import { KWSLogo } from "@/components/icons/KWSLogo"
+import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
@@ -46,23 +48,20 @@ export function Hero() {
         aria-hidden="true" 
       />
 
-      {/* Centered KWS Isotype / Logo with subtle elevation and technological presence */}
+      {/* Centered KWS Vector Logo & Content */}
       <div className="relative z-20 flex flex-col items-center justify-center px-4 text-center select-none pointer-events-auto">
-        <div className="relative group">
-          {/* Subtle ambient halo in KWS Emerald and Navy */}
+        <div className="relative group flex items-center justify-center">
+          {/* Subtle ambient diffuse glow in KWS colors for contrast against hyperspeed light trails */}
           <div 
             aria-hidden="true"
-            className="absolute -inset-8 rounded-full bg-gradient-to-tr from-[#10b981]/25 via-[#0e5ea5]/20 to-[#14b8a6]/25 blur-3xl opacity-70 transition-all duration-700 group-hover:opacity-100 group-hover:scale-110 pointer-events-none" 
+            className="absolute -inset-8 sm:-inset-12 rounded-full bg-gradient-to-r from-[#0e5ea5]/25 via-[#14b8a6]/20 to-[#21B176]/25 blur-3xl opacity-75 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105 pointer-events-none" 
           />
           
-          {/* Elevated glass container for KWS logo */}
-          <div className="relative flex items-center justify-center rounded-[8px] border border-white/10 bg-card/40 p-6 sm:p-8 backdrop-blur-md shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_35px_rgba(16,185,129,0.18)] transition-transform duration-500 hover:scale-[1.03]">
-            <img
-              src="/kws-icon.png"
-              alt="KeyWay Solutions"
-              className="h-24 sm:h-32 md:h-40 w-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.9)] brightness-110"
-            />
-          </div>
+          {/* Native Vector SVG Logo with transparent background and soft glow */}
+          <KWSLogo 
+            className="w-full max-w-[280px] sm:max-w-md md:max-w-lg lg:max-w-xl h-auto drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)] drop-shadow-[0_0_24px_rgba(33,177,118,0.25)] transition-transform duration-500 hover:scale-[1.02]"
+            aria-label="KeyWay Solutions Logo"
+          />
         </div>
 
         {/* Clean KWS Brand Typography */}
@@ -77,8 +76,25 @@ export function Hero() {
           Software a Medida & Automatizaciones con IA
         </p>
 
+        {/* Minimalist Action Buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xs sm:max-w-none">
+          <a
+            href="#contacto"
+            className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[4px] bg-primary px-[1.35em] py-[0.78em] text-sm font-medium text-primary-foreground shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-all hover:brightness-110 active:scale-[0.98]"
+          >
+            <span>Agendar Consulta</span>
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
+          <a
+            href="#servicios"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[4px] border border-border/80 bg-card/70 px-[1.35em] py-[0.78em] text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:bg-muted/70 hover:border-border active:scale-[0.98]"
+          >
+            <span>Ver Soluciones</span>
+          </a>
+        </div>
+
         {/* Interactive guidance tag */}
-        <div className="mt-10 flex items-center gap-2 rounded-[4px] border border-border/80 bg-card/60 px-3 py-1 font-mono text-[11px] text-muted-foreground backdrop-blur-sm">
+        <div className="mt-8 flex items-center gap-2 rounded-[4px] border border-border/80 bg-card/60 px-3 py-1 font-mono text-[11px] text-muted-foreground backdrop-blur-sm">
           <span className="size-1.5 rounded-full bg-primary animate-pulse" />
           <span>Haz clic y arrastra para interactuar con Hyperspeed</span>
         </div>
